@@ -1,0 +1,7 @@
+$palet: 0, 240, 300;
+$index: 1;
+
+@function select-color($index){
+    $color: nth($palet , $index);
+    @return $color;
+}

@@ -1,0 +1,87 @@
+@import "var.scss";
+@import "functions.scss";
+
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    font-family: $myFontFamily;
+    color: $myFontColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $myPrimmaryColor;
+    gap: $gap;
+
+  /*  & > div{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-grow: 1;
+        gap: $gap;
+    }
+*/
+    @for $myTempVarCont from 1 through 3{
+        .container-#{$myTempVarCont}{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            flex-grow: 1;
+            gap: $gap;
+
+            $color: 0;
+            $color: select-color($myTempVarCont);
+            @for $myTempVar from 1 through 9{
+                
+                .box-#{$myTempVar}{
+                    background-color: hsl($color,100,$myTempVar*10);
+                    padding: 10px;
+                    //border: $myBorder;
+                    border-radius: 10px;
+                }
+                
+            }
+        }
+    }
+//    .container-1 [class^=box]{
+//        //background-color: red;
+//        background-color: darken( red, $myTempVar + 15);
+//        padding: 10px;
+//        border: $myBorder;
+//
+//        @for $myTempVar from 1 to 4{
+//            .div-#{$myTempVar}{
+//                background-color: darken( red, $myTempVar + 15);
+//            }
+//       }
+//    }
+    
+
+//    div.container-2 > div{
+//        background-color: green;
+//        padding: 10px;
+//        border: $myBorder;
+//        @for $myTempVar from 1 to 4{
+//            .darken-#{$myTempVar}{
+//                color: darken( green, 15%);
+//            }
+//        }
+//    }
+
+//    div.container-3 > div{
+//        //background-color: blue;
+//        padding: 10px;
+//        border: $myBorder;
+//
+//        @for $myTempVar from 1 to 4{
+//            &.boxdarken-#{$myTempVar}{
+//                background-color: blue (0, 100%, 5%);
+//                $myTempVar:$myTempVar+1;
+//            }
+//        }  
+//    }
+}
